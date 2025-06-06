@@ -1,9 +1,9 @@
 import Link from "next/link"
 
-const Header: React.FC = () => {
+const Home:React.FC = () => {
     return (
         <>
-            <h1>Header</h1>
+            <h1>Home page</h1>
             <nav className="flex flex-row gap-4">
                 <Link href={'/home'}>Go to Home page</Link>
                 <Link href={'/about'}>Go to About page</Link>
@@ -12,4 +12,4 @@ const Header: React.FC = () => {
     )
 }
 
-export default Header
+export default Home
