@@ -8,6 +8,7 @@ const About:React.FC = () => {
             <nav className="flex flex-row gap-4">
                 <Link href={'/home'}>Go to Home page</Link>
                 <Link href={'/about'}>Go to About page</Link>
+                <Link href={'/posts'}>Go to About page</Link>
             </nav>
             <div className="p-8 space-y-4">
                 <Button label="Small Rounded-sm" size="small" shape="rounded-sm" />

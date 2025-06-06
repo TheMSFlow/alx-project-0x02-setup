@@ -21,6 +21,7 @@ const Home:React.FC = () => {
             <nav className="flex flex-row gap-4">
                 <Link href={'/home'}>Go to Home page</Link>
                 <Link href={'/about'}>Go to About page</Link>
+                <Link href={'/posts'}>Go to About page</Link>
             </nav>
              <main className="p-8">
                 <button
