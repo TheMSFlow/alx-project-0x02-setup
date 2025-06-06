@@ -32,4 +32,19 @@ const PostsPage: React.FC = () => {
   );
 };
 
+export const getStaticProps = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=10");
+  const data = await res.json();
+
+  const posts: PostProps[] = data.map((post: any) => ({
+    title: post.title,
+    content: post.body,
+    userId: post.userId,
+  }));
+
+  return {
+    props: { posts },
+  };
+};
+
 export default PostsPage;
