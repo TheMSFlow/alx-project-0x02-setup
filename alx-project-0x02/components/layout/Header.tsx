@@ -7,7 +7,7 @@ const Header: React.FC = () => {
             <nav className="flex flex-row gap-4">
                 <Link href={'/home'}>Go to Home page</Link>
                 <Link href={'/about'}>Go to About page</Link>
-                <Link href={'/posts'}>Go to About page</Link>
+                <Link href={'/posts'}>Go to Posts page</Link>
             </nav>
         </>
     )

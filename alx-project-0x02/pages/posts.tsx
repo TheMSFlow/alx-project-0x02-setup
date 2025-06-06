@@ -1,17 +1,35 @@
-import Header from "@/components/layout/Header"
-import Link from "next/link"
+import React, { useEffect, useState } from "react";
+import PostCard from "@/components/common/PostCard";
+import { type PostProps } from "@/interfaces";
+import Header from "@/components/layout/Header";
 
+const PostsPage: React.FC = () => {
+  const [posts, setPosts] = useState<PostProps[]>([]);
 
-const Posts:React.FC = () => {
-    return (
-        <>
-            <h1>Posts page</h1>
-            <nav className="flex flex-row gap-4">
-               <Header />
-            </nav>
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
+      .then((res) => res.json())
+      .then((data) => {
+        const mapped = data.map((post: any) => ({
+          title: post.title,
+          content: post.body,
+          userId: post.userId,
+        }));
+        setPosts(mapped);
+      })
+      .catch((err) => console.error("Error fetching posts:", err));
+  }, []);
 
-        </>
-    )
-}
+  return (
+    <>
+        <Header />
+        <main className="p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post, index) => (
+            <PostCard key={index} {...post} />
+        ))}
+        </main>
+    </>
+  );
+};
 
-export default Posts
+export default PostsPage;
