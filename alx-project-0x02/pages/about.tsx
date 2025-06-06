@@ -1,14 +1,13 @@
 import Link from "next/link"
 import Button from "@/components/common/Button";
+import Header from "@/components/layout/Header";
 
 const About:React.FC = () => {
     return (
         <>
             <h1>About page</h1>
             <nav className="flex flex-row gap-4">
-                <Link href={'/home'}>Go to Home page</Link>
-                <Link href={'/about'}>Go to About page</Link>
-                <Link href={'/posts'}>Go to About page</Link>
+                <Header />
             </nav>
             <div className="p-8 space-y-4">
                 <Button label="Small Rounded-sm" size="small" shape="rounded-sm" />

@@ -2,6 +2,7 @@ import Link from "next/link"
 import React, { useState } from "react";
 import Card from "@/components/common/Card";
 import PostModal from "@/components/common/PostModal";
+import Header from "@/components/layout/Header";
 
 
 const Home:React.FC = () => {
@@ -19,9 +20,7 @@ const Home:React.FC = () => {
         <>
             <h1>Home page</h1>
             <nav className="flex flex-row gap-4">
-                <Link href={'/home'}>Go to Home page</Link>
-                <Link href={'/about'}>Go to About page</Link>
-                <Link href={'/posts'}>Go to About page</Link>
+                <Header />
             </nav>
              <main className="p-8">
                 <button
