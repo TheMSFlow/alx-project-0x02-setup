@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Card from "@/components/common/Card"
 
 const Home:React.FC = () => {
     return (
@@ -8,6 +9,8 @@ const Home:React.FC = () => {
                 <Link href={'/home'}>Go to Home page</Link>
                 <Link href={'/about'}>Go to About page</Link>
             </nav>
+
+            <Card title="God Abeg" content="Thank you Lord" />
         </>
     )
 }
